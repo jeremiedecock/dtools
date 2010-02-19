@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+# -*- coding : utf-8 -*-
+
+import Options
+
+VERSION = '0.0.3'
+APPNAME = 'dynamixel-tools'
+
+srcdir = '.'
+blddir = 'build'
+
+def set_options(opt):
+    opt.tool_options('compiler_cxx')
+
+def configure(conf):
+    conf.check_tool('compiler_cxx')
+
+def build(bld):
+    bld.add_subdirs('src')

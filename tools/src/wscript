@@ -1,0 +1,61 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+def build(bld):
+    # change_baudrate
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "change_baudrate.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'change_baudrate'
+    obj.lib = 'dynamixel'
+
+    # dump_ax12
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "dump_ax12.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'dump_ax12'
+    obj.lib = 'dynamixel'
+
+    # monitor_ax12
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "monitor_ax12.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'monitor_ax12'
+    obj.lib = 'dynamixel'
+
+    # ping_ax12
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "ping_ax12.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'ping_ax12'
+    obj.lib = 'dynamixel'
+
+    # reset_ax12
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "reset_ax12.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'reset_ax12'
+    obj.lib = 'dynamixel'
+
+    # switch_off_ax12
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "switch_off_ax12.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'switch_off_ax12'
+    obj.lib = 'dynamixel'
+
+    # switch_on_ax12
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "switch_on_ax12.cpp"
+    obj.includes = '/usr/includes'
+    obj.target = 'switch_on_ax12'
+    obj.lib = 'dynamixel'
+
+    # install all includes (custom-made)
+    import os, glob, types
+    p = bld.srcnode.abspath() + '/src/'
+    r = glob.glob(p + '*/*.hpp') + glob.glob(p + '*.hpp')
+    for i in r:
+        k = os.path.split(i)
+        d = os.path.split(k[0])
+        bld.install_files('${PREFIX}/include/dynamixel/' + d[1], i)

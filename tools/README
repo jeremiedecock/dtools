@@ -1,0 +1,20 @@
+* change_baudrate
+    change le baudrate des dynamixels connectés
+
+* dump_ax12
+    affiche le contenu de l'EPROM et de la RAM des dynamixels
+
+* monitor_ax12
+    affiche la température des dynamixels en temps réel
+    
+* ping_ax1
+    ping les dynamixels connectés
+
+* reset_ax12
+    remet à zero les dynamixels
+
+* switch_off_ax12
+    désactive le couple sur les dynamixels
+
+* switch_on_ax12
+    active le couple sur les dynamixels
